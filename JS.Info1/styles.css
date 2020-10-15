@@ -1,0 +1,85 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #404040;
+}
+header img {
+  height: 30vh;
+}
+
+.container {
+  background-color: #f3f3f3;
+  width: 90vw;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  padding-bottom: 10px;
+}
+.container__title {
+  align-self: center;
+}
+.container__solutionsAndTasks {
+  display: flex;
+  justify-content: space-around;
+}
+.container__tasks {
+  width: 35vw;
+  margin-left: 10px;
+  height: 100%;
+}
+.container__task {
+  display: none;
+}
+.container__taskFocus {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #ebe8e8;
+  animation-name: taskFocused;
+  animation-duration: 1.5s;
+  padding: 3px;
+}
+.container__solution {
+  margin-bottom: 5px;
+  font-size: 110%;
+}
+.container__solution label {
+  margin: 3px;
+  display: inline-block;
+  -webkit-user-select: none;
+          user-select: none;
+}
+.container__solution label:hover {
+  color: darkred;
+  cursor: pointer;
+  background-color: #dad6d6;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  width: 100%;
+  background-color: #7a7979;
+  color: #f3f3f3;
+  font-weight: 700;
+  font-style: italic;
+}
+
+@keyframes taskFocused {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
