@@ -1,0 +1,260 @@
+body {
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+header {
+  background: #f3f2f8;
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .container__logo {
+  margin: 10px 0px 0px 30px;
+}
+header .container nav {
+  margin-right: 20px;
+}
+header .container nav a {
+  color: black;
+  font-size: 130%;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0px 0px 5px 5px;
+  font-family: "Montserrat", sans-serif;
+}
+header .container nav a:hover {
+  color: blueviolet;
+}
+
+.home {
+  background: url(../Images/banner-4.png) no-repeat;
+  background-size: 100% 80%;
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+}
+.home__download-block {
+  width: 100%;
+  padding: 4vh;
+}
+.home__download-block h1 {
+  font-size: 50px;
+  font-weight: 800;
+  margin: 8vh 0vw;
+  -webkit-user-select: none;
+          user-select: none;
+}
+.home__gray-text {
+  color: gray;
+  -webkit-user-select: none;
+          user-select: none;
+}
+.home__buttons-for-downloads {
+  margin-top: 5vh;
+}
+.home__buttons-for-downloads a {
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  border-radius: 0.35rem;
+  color: #fff;
+  background-color: #5954cb;
+  border-color: #5954cb;
+  font-weight: 600;
+  border: 1px solid transparent;
+  text-decoration: none;
+}
+.home__buttons-for-downloads a:hover {
+  background-color: #342eac;
+}
+.home__example_app {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 300px;
+  padding-top: 4vh;
+  -webkit-user-select: none;
+          user-select: none;
+}
+.home__example_app img {
+  width: 90%;
+}
+.home__example_app img:hover {
+  animation-name: phone-sizing;
+  animation-duration: 1s;
+}
+
+.about {
+  background: url(../Images/service-bg.png) no-repeat;
+  background-size: 100% 80%;
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 90vw;
+  padding: 8vh 3vw;
+}
+.about__section-name {
+  width: 90vw;
+  color: #5954cb !important;
+  font-size: 1rem;
+  font-weight: 600;
+  -webkit-user-select: none;
+          user-select: none;
+}
+.about__section-title {
+  width: 90vw;
+  margin-bottom: 3rem !important;
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: inherit;
+  -webkit-user-select: none;
+          user-select: none;
+}
+.about__services {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  -webkit-user-select: none;
+          user-select: none;
+}
+.about__service {
+  padding: 3rem !important;
+  background-color: #fff;
+  width: 300px;
+  box-sizing: border-box;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 5px 25px;
+  border-radius: 5%;
+  margin: 10px;
+  -webkit-user-select: none;
+          user-select: none;
+}
+
+.services {
+  background: url(../Images/testimonials-bg.png);
+  background-size: 100% 80%;
+  font-family: "Montserrat", sans-serif;
+  width: 97vw;
+  display: flex;
+  flex-direction: column;
+}
+.services img {
+  width: 80vw;
+  padding: 0vh 7vw;
+  -webkit-user-select: none;
+          user-select: none;
+}
+.services img:hover {
+  animation-name: rotate-image;
+  animation-duration: 1s;
+}
+.services__info {
+  width: 80vw;
+  margin: 0vh 10vw;
+}
+.services__info h2 {
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: inherit;
+  -webkit-user-select: none;
+          user-select: none;
+}
+.services__gray-text {
+  color: gray;
+  -webkit-user-select: none;
+          user-select: none;
+}
+.services__buttons-for-downloads {
+  margin: 5vh 0vw;
+}
+.services__buttons-for-downloads a {
+  padding: 0.2rem 0.8rem;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  border-radius: 0.35rem;
+  color: #fff;
+  background-color: #5954cb;
+  border-color: #5954cb;
+  font-weight: 600;
+  border: 1px solid transparent;
+  text-decoration: none;
+}
+.services__buttons-for-downloads a:hover {
+  background-color: #342eac;
+}
+
+footer {
+  background: #f8f9ff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  -webkit-user-select: none;
+          user-select: none;
+}
+footer .developer {
+  font-style: italic;
+  padding-right: 20px;
+}
+footer .container__logo {
+  padding-left: 20px;
+}
+
+@media (min-width: 768px) {
+  .home__download-block {
+    width: 40vw;
+  }
+
+  .services {
+    flex-direction: row;
+  }
+  .services__info {
+    width: 50vw;
+    margin: 0vh 3vw;
+  }
+  .services img {
+    width: 35vw;
+  }
+}
+@media (max-width: 768px) {
+  .home__download-block {
+    margin: 15vh 0vw;
+    width: 70vw;
+  }
+
+  .about__service {
+    width: 80%;
+  }
+}
+@keyframes phone-sizing {
+  0%, 100% {
+    width: 90%;
+  }
+  50% {
+    width: 95%;
+  }
+}
+@keyframes rotate-image {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(10deg);
+  }
+}
