@@ -1,0 +1,100 @@
+$headerBgColor: #404040;
+$footerBgColor:#7a7979;
+$footerTextColor: #f3f3f3;
+$bodyBgColor: #f3f3f3;
+$taskBgColor:  #ebe8e8;
+$solutionHoverColor: darkred;
+$solutionHoverBgColor: #dad6d6;
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+header{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: $headerBgColor;
+
+    img{
+        height: 30vh;
+    }
+}
+
+.container{
+    background-color: $bodyBgColor;
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    padding-bottom: 10px;
+
+    &__title{
+        align-self: center;
+    }
+
+    &__solutionsAndTasks{
+        display: flex;
+        justify-content: space-around;  
+    }
+
+    &__tasks{
+        width: 35vw;
+        margin-left: 10px;
+        margin-top: 80px;
+        height: 100%;      
+    }
+
+    &__task{
+        display: none;
+    }
+
+    &__taskFocus{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: $taskBgColor;
+        animation-name: taskFocused;
+        animation-duration: 1.5s;
+        padding: 3px;
+    }
+
+    &__solution{
+        margin-bottom: 5px;
+        font-size: 110%;
+
+        label{
+            margin: 3px;
+            display:inline-block;
+            user-select: none;
+        }
+        label:hover{
+            color: $solutionHoverColor;
+            cursor: pointer;
+            background-color: $solutionHoverBgColor;
+        }
+    }
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    width: 100%;
+    background-color: $footerBgColor;
+    color: $footerTextColor;
+    font-weight: 700;
+    font-style: italic;
+}
+
+@keyframes taskFocused{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
