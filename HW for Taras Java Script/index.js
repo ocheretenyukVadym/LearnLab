@@ -111,3 +111,111 @@ function solutionTask15_2() {
 }
 
 const solutionTask17 = () => confirm("Do you agree?") ? alert("You agreed.") : alert("You canceled the execution.");
+
+function solutionTask4_1_1(){
+
+    /*
+        Write the code, one line for each action:
+
+            Create an empty object user.
+            Add the property name with the value John.
+            Add the property surname with the value Smith.
+            Change the value of the name to Pete.
+            Remove the property name from the object.
+    */
+
+    const user = {};
+    user.name = 'John';
+    user.surname = 'Smith';
+    user.name = 'Pete';
+    delete user.name;
+
+    alert(user.name);
+}
+
+function solutionTask4_1_2() {
+
+    // Write the function isEmpty(obj) which returns true if the object has no properties, false otherwise.
+
+
+    let schedule = {};
+
+    alert(isEmpty(schedule)); // true
+
+    schedule["8:30"] = "get up";
+
+    alert(isEmpty(schedule)); // false
+
+    function isEmpty(obj) {
+        for (let item in obj)
+            return false;
+        return true;
+    }
+
+}
+
+function solutionTask4_4() {
+/*
+    Create an object calculator with three methods:
+
+    read() prompts for two values and saves them as object properties.
+        sum() returns the sum of saved values.
+            mul() multiplies saved values and returns the result.
+*/
+
+    let calculator = {
+
+        firstNumb: 0,
+        secondNubm: 0,
+
+        read(){
+            this.firstNumb = Number(prompt("Enter first number: "));
+            this.secondNubm = Number(prompt("Enter second number: "));
+        },
+
+        sum(){
+            return this.firstNumb + this.secondNubm;
+        },
+
+        mul(){
+            return this.firstNumb * this.secondNubm;
+        }
+    };
+
+    calculator.read();
+    alert(calculator.sum());
+    alert(calculator.mul());
+}
+
+function solutionTask4_5() {
+    /*
+        Create a constructor function Calculator that creates objects with 3 methods:
+
+        read() asks for two values using prompt and remembers them in object properties.
+        sum() returns the sum of these properties.
+        mul() returns the multiplication product of these properties.   
+    */
+    
+        function Calculator(){
+    
+            this.firstNumb = 0,
+            this.secondNumb = 0,
+    
+            this.read = function(){
+                this.firstNumb = Number(prompt("Enter first number: "));
+                this.secondNubm = Number(prompt("Enter second number: "));
+            }
+    
+            this.sum = () => this.firstNumb + this.secondNubm;
+    
+            this.mul = () => this.firstNumb * this.secondNubm;
+            
+        };
+    
+        let calculator = new Calculator();
+        calculator.read();
+
+        alert( "Sum=" + calculator.sum() );
+        alert( "Mul=" + calculator.mul() ); 
+    }
+
