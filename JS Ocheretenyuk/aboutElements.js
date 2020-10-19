@@ -18,6 +18,11 @@ const SOLUTION_6_8 = document.getElementById("solution6_8");
 const SOLUTION_6_9 = document.getElementById("solution6_9");
 const SOLUTION_6_10 = document.getElementById("solution6_10");
 
+const SOLUTION_4_1_1 = document.getElementById("solution4_1_1");
+const SOLUTION_4_1_2 = document.getElementById("solution4_1_2");
+const SOLUTION_4_4 = document.getElementById("solution4_4");
+const SOLUTION_4_5 = document.getElementById("solution4_5");
+
 const TASK_1 = document.getElementById("task1");
 const TASK_4 = document.getElementById("task4");
 const TASK_6 = document.getElementById("task6");
@@ -37,6 +42,11 @@ const TASK_6_6 = document.getElementById("task6_6");
 const TASK_6_8 = document.getElementById("task6_8");
 const TASK_6_9 = document.getElementById("task6_9");
 const TASK_6_10 = document.getElementById("task6_10");
+
+const TASK_4_1_1 = document.getElementById("task4_1_1");
+const TASK_4_1_2 = document.getElementById("task4_1_2");
+const TASK_4_4 = document.getElementById("task4_4");
+const TASK_4_5 = document.getElementById("task4_5");
 
 
 SOLUTION_1.addEventListener('mouseenter', function(){
@@ -151,6 +161,31 @@ SOLUTION_6_10.addEventListener('mouseout', function(){
     TASK_6_10.className = "container__task";
 })
 
+SOLUTION_4_1_1.addEventListener('mouseenter', function(){
+    TASK_4_1_1.className = "container__taskFocus";
+})
+SOLUTION_4_1_1.addEventListener('mouseout', function(){
+    TASK_4_1_1.className = "container__task";
+})
+SOLUTION_4_1_2.addEventListener('mouseenter', function(){
+    TASK_4_1_2.className = "container__taskFocus";
+})
+SOLUTION_4_1_2.addEventListener('mouseout', function(){
+    TASK_4_1_2.className = "container__task";
+})
+SOLUTION_4_4.addEventListener('mouseenter', function(){
+    TASK_4_4.className = "container__taskFocus";
+})
+SOLUTION_4_4.addEventListener('mouseout', function(){
+    TASK_4_4.className = "container__task";
+})
+SOLUTION_4_5.addEventListener('mouseenter', function(){
+    TASK_4_5.className = "container__taskFocus";
+})
+SOLUTION_4_5.addEventListener('mouseout', function(){
+    TASK_4_5.className = "container__task";
+})
+
 
 SOLUTION_1.addEventListener("click", solutionTask1);
 SOLUTION_4.addEventListener("click", solutionTask4);
@@ -170,6 +205,10 @@ SOLUTION_6_6.addEventListener("click", solutionTask6_6);
 SOLUTION_6_8.addEventListener("click", solutionTask6_8);
 SOLUTION_6_9.addEventListener("click", solutionTask6_9);
 SOLUTION_6_10.addEventListener("click", solutionTask6_10);
+SOLUTION_4_1_1.addEventListener("click", solutionTask4_1_1);
+SOLUTION_4_1_2.addEventListener("click", solutionTask4_1_2);
+SOLUTION_4_4.addEventListener("click", solutionTask4_4);
+SOLUTION_4_5.addEventListener("click", solutionTask4_5);
 
 function solutionTask6_1() {
     let n = Number(prompt("n: "));
@@ -317,3 +356,111 @@ function solutionTask6_10() {
       
       askPassword(user.loginOk.bind(user), user.loginFail.bind(user));
 }
+function solutionTask4_1_1(){
+
+    /*
+        Write the code, one line for each action:
+
+            Create an empty object user.
+            Add the property name with the value John.
+            Add the property surname with the value Smith.
+            Change the value of the name to Pete.
+            Remove the property name from the object.
+    */
+
+    const user = {};
+    user.name = 'John';
+    user.surname = 'Smith';
+    user.name = 'Pete';
+    delete user.name;
+
+    alert(user.name);
+}
+
+function solutionTask4_1_2() {
+
+    // Write the function isEmpty(obj) which returns true if the object has no properties, false otherwise.
+
+
+    let schedule = {};
+
+    alert(isEmpty(schedule)); // true
+
+    schedule["8:30"] = "get up";
+
+    alert(isEmpty(schedule)); // false
+
+    function isEmpty(obj) {
+        for (let item in obj)
+            return false;
+        return true;
+    }
+
+}
+
+function solutionTask4_4() {
+/*
+    Create an object calculator with three methods:
+
+    read() prompts for two values and saves them as object properties.
+        sum() returns the sum of saved values.
+            mul() multiplies saved values and returns the result.
+*/
+
+    let calculator = {
+
+        firstNumb: 0,
+        secondNubm: 0,
+
+        read(){
+            this.firstNumb = Number(prompt("Enter first number: "));
+            this.secondNubm = Number(prompt("Enter second number: "));
+        },
+
+        sum(){
+            return this.firstNumb + this.secondNubm;
+        },
+
+        mul(){
+            return this.firstNumb * this.secondNubm;
+        }
+    };
+
+    calculator.read();
+    alert(calculator.sum());
+    alert(calculator.mul());
+}
+
+function solutionTask4_5() {
+    /*
+        Create a constructor function Calculator that creates objects with 3 methods:
+
+        read() asks for two values using prompt and remembers them in object properties.
+        sum() returns the sum of these properties.
+        mul() returns the multiplication product of these properties.   
+    */
+    
+        function Calculator(){
+    
+            this.firstNumb = 0,
+            this.secondNumb = 0,
+    
+            this.read = function(){
+                this.firstNumb = Number(prompt("Enter first number: "));
+                this.secondNubm = Number(prompt("Enter second number: "));
+            }
+    
+            this.sum = () => this.firstNumb + this.secondNubm;
+    
+            this.mul = () => this.firstNumb * this.secondNubm;
+            
+        };
+    
+        let calculator = new Calculator();
+        calculator.read();
+
+        alert( "Sum=" + calculator.sum() );
+        alert( "Mul=" + calculator.mul() ); 
+    }
+
+
