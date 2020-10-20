@@ -17,8 +17,8 @@ public class Main {
             System.out.println(list.get(0));
             System.out.println(list.get(1));
             System.out.println(list.get(2));
-        } catch (ElementNotFoundExeption e){
-            throw new ElementNotFoundExeption("There is no such element", e);
+        } catch (ElementNotFoundException e){
+            throw new ElementNotFoundException("There is no such element", e);
         }
 
         System.out.println("Size: " + list.size());

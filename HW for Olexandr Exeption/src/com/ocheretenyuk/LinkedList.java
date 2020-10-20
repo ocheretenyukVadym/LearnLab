@@ -35,7 +35,7 @@ public class LinkedList<E> implements List {
                 result = head.next;
 
             return result.item;
-        } else throw new ElementNotFoundExeption();
+        } else throw new ElementNotFoundException();
     }
 
     @Override
@@ -64,7 +64,7 @@ public class LinkedList<E> implements List {
             temp.next.prev = null;
             head = temp.next;
             size--;
-        } else if (index >= size) throw new ElementNotFoundExeption("You are trying to delete non-existent items");
+        } else if (index >= size) throw new ElementNotFoundException("You are trying to delete non-existent items");
         else if (index < size - 1) {
             for (int i = 0; i < index; i++)
                 temp = head.next;
