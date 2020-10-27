@@ -1,25 +1,31 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import ButtonCounter from './ButtonCounter/ButtonCounter';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      count: 0,
+      name: ['+1','-1','+2','+5']
+    }
+  }
+
+  updateState = (currentCount) => {
+    this.setState({ count: currentCount })
+  }
+
+  render() {
+    return (
+      <div className='container'>
+        <h1>{this.state.count}</h1>
+        <div className='buttons'>
+          {this.state.name.map(button => 
+            <ButtonCounter count={this.state.count} updateState={this.updateState} name={button} />)}
+        </div>
+      </div>
+    )
+  }
 }
 
 export default App;
