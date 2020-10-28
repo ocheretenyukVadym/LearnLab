@@ -21,7 +21,7 @@ class App extends React.Component {
         <h1>{this.state.count}</h1>
         <div className='buttons'>
           {this.state.name.map(button => 
-            <ButtonCounter count={this.state.count} updateState={this.updateState} name={button} />)}
+            <ButtonCounter key={button.name} count={this.state.count} updateState={this.updateState} name={button} />)}
         </div>
       </div>
     )
