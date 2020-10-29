@@ -8,7 +8,7 @@ function App() {
 
   return (
     <div className="container">
-      <TodoList 
+      <TodoList
         todoTasks = {todoTasks}
         setTask = {setTask}
         idTask = {idTask}
