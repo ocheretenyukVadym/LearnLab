@@ -1,0 +1,28 @@
+.login-container{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+
+    width: 60vw;
+    height: 90vh;
+}
+
+.login-container form{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 60%;
+    font-size: 18px;
+
+    margin-top: 20vh;
+}
+.login-container form input{
+    margin-top: 5px;
+    font-size: 18px;
+    padding: 2px;
+}
+
+.login-container form label{
+    user-select: none;
+}

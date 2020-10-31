@@ -1,0 +1,36 @@
+.singup-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    width: 60vw;
+    height: 90vh;
+}
+
+.singup-container form{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 60%;
+    font-size: 18px;
+    margin-top: 20vh;
+}
+.singup-container form input{
+    margin-top: 5px;
+    font-size: 18px;
+    padding: 2px;
+}
+
+.singup-container form label{
+    user-select: none;
+}
+.notEquals{
+    border: 2px solid red;
+}
+.equals{
+    border: 2px solid green;
+    
+}
+input:focus{
+    outline: none;
+}
