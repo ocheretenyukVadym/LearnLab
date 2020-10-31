@@ -34,3 +34,6 @@
 input:focus{
     outline: none;
 }
+.uncorrect{
+    color: red;
+}

@@ -13,6 +13,8 @@ class Store{
     constructor() {
         makeObservable(this, {
             users: observable,
+            currentUserId: observable,
+            currentUserName: observable,
             isAuth: computed,
             autorizatedUser: action,
             createNewUser: action,
@@ -26,7 +28,10 @@ class Store{
     }
 
     singOut(){
-        this.users.splice(this.currentUserId-1, 1);
+        let result = this.users.find(user => user.auth === true);
+        result.auth = false;
+        this.currentUserName = '';
+        this.currentUserId = null;
     }
 
     autorizatedUser(login, password){
@@ -35,13 +40,13 @@ class Store{
             result.auth = true;
             this.currentUserName = result.userName;
             this.currentUserId = result.id;
-            return result.userName;
+            return true;
         } 
         else return false;
     }
 
     createNewUser(userName, email, password){
-        let lastId = this.users[this.users.length-1].id;
+        let lastId = this.users.length > 0? this.users[this.users.length-1].id : 1;
         this.users.push({userName, email, password, auth: false, id:lastId+1});       
     }
 

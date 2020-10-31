@@ -9,6 +9,9 @@
     background-color: rgb(185, 185, 248);
 }
 
+.logo{
+    user-select: none;
+}
 .logo img{
     height: 11vh;
 }
@@ -46,6 +49,7 @@
     align-self: center;
     margin-right: 10px;
     font-weight: 600;
+    user-select: none;
 }
 
 .activeLink{

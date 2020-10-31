@@ -19,12 +19,12 @@ function Header() {
                 {!store.isAuth ?
                     <>
                         <span className="button-nav">
-                            <NavLink to='/singup' activeClassName='activeLink'>
+                            <NavLink to='/singup'>
                                 SingUp
                             </NavLink>
                         </span>
                         <span className="button-nav">
-                            <NavLink to='/login' activeClassName='activeLink'>
+                            <NavLink to='/login'>
                                 Login
                             </NavLink>
                         </span>

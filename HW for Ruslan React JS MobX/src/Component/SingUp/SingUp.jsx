@@ -9,15 +9,20 @@ const SingUp = (props) => {
     const [password, setPassword] = useState('');
     const [repeatPassword, setRepeatPassword] = useState('');
     const [touched, setTouched] = useState(false);
-    
+    const [isCorrectData, setIsCorrectData] = useState(true);
+
     const handleChangeName = event => setUserName(event.target.value);
     const handleChangeEmail = event => setEmail(event.target.value);
     const handleChangePassword = event => setPassword(event.target.value);
     const handleChangeRepeatPassword = event => {setRepeatPassword(event.target.value); setTouched(true)};
 
     const handleSubmit = (event) => {
-        store.createNewUser(userName, email, password); 
-        props.history.push('/login');
+        if(password === repeatPassword){
+            setIsCorrectData(true)
+            store.createNewUser(userName, email, password); 
+            props.history.push('/login');
+        }
+        else setIsCorrectData(false);
         event.preventDefault();
     }
 
@@ -40,6 +45,9 @@ const SingUp = (props) => {
                         className={touched && password !== repeatPassword ? 'notEquals' : ''} />
                         
                 <input type="submit" value="Send" />
+
+                {!isCorrectData && <label className='uncorrect'>Not equals passwords</label>}
+
             </form>
         </div>
     )

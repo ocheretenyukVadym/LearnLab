@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center;
     height: 100%;
-    
+    user-select: none;
 }
 .home img{
     width: 40vw;
