@@ -1,9 +1,8 @@
-import { observer } from 'mobx-react';
+import { inject, observer } from 'mobx-react';
 import React, { useState } from 'react'
-import store from '../../Store/store';
 import './SingUp.css';
 
-const SingUp = (props) => {
+const SingUp = ({store, history}) => {
     const [userName, setUserName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -20,8 +19,9 @@ const SingUp = (props) => {
         if(password === repeatPassword){
             setIsCorrectData(true)
             store.createNewUser(userName, email, password); 
-            props.history.push('/login');
+            history.push('/login');
         }
+
         else setIsCorrectData(false);
         event.preventDefault();
     }
@@ -53,4 +53,6 @@ const SingUp = (props) => {
     )
 }
 
-export default observer(SingUp);
+
+
+export default inject('store')(observer(SingUp));

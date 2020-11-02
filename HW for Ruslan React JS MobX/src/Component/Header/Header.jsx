@@ -1,10 +1,9 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import "./Header.css";
-import { observer } from 'mobx-react';
-import store from '../../Store/store';
+import { inject, observer } from 'mobx-react';
 
-function Header() {
+function Header({store}) {
 
     const singout = () => store.singOut();
 
@@ -39,4 +38,5 @@ function Header() {
     );
 }
 
-export default observer(Header);
+
+export default inject('store')(observer(Header));

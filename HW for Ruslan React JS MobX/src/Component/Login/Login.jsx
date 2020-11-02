@@ -1,9 +1,8 @@
-import { observer } from 'mobx-react';
+import { inject, observer } from 'mobx-react';
 import React, { useState } from 'react'
-import store from '../../Store/store';
 import './Login.css';
 
-const Login = (props) => {
+const Login = ({store, history}) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [isCorrectData, setIsCorrectData] = useState(true);
@@ -13,7 +12,7 @@ const Login = (props) => {
 
     const handleSubmit = (event) => {
         if (store.autorizatedUser(email, password)){
-            props.history.push('/home');
+            history.push('/home');
             setIsCorrectData(true);
         }
         else setIsCorrectData(false);
@@ -40,4 +39,4 @@ const Login = (props) => {
     )
 }
 
-export default observer(Login);
+export default inject('store')(observer(Login));

@@ -1,6 +1,6 @@
 import { action, computed, makeObservable, observable } from 'mobx';
 
-class Store{
+export class Store{
     users = []
 
     currentUserName = ''
@@ -53,4 +53,4 @@ class Store{
 }
 
 
-export default new Store();
+export const store = new Store();
