@@ -42,18 +42,6 @@ function makePromiseResolveWith3(){
     return new Promise((resolve) => {setInterval(() => {resolve(value)}, delayInMs)})
   }
   
-  module.exports = {
-    makePromiseResolveWith3,
-    makePromiseRejectWithBoo,
-    makePromiseWithConstructor,
-    makeDelayPromise,
-  };
-  
-  
-  
-  
-  
-  
   
 //   PART 2
 //   (focus on using .then, .catch, .finally, .etc)
@@ -78,14 +66,20 @@ function makePromiseResolveWith3(){
    * @param {handler} handler 
    */
   function consumePromise(promise, consumer, handler){
-    promise.then(response => consumer(handler(response)));
+    promise.then( result => consumer(handler(result)))
+    promise.catch( result => consumer(handler(result)))
   }
-  
+
+ 
   /**
    * @callback thunk
    * @returns {void}
    */
   module.exports = {
+    makePromiseResolveWith3,
+    makePromiseRejectWithBoo,
+    makePromiseWithConstructor,
+    makeDelayPromise,
     waitForPromise,
     consumePromise,
   };
